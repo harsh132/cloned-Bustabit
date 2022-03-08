@@ -1,15 +1,10 @@
-{{##def.page_title = 'Play' #}}
-
-{{##def.content:
-    <div id="game">
-        Game Loading...
-    </div>
-    <!--Global vars-->
-    <script>
-        // TODO:
-        //  var OTT =  {{=it.ott}};
-    </script>
-    <!--RequireJs-->
-    <script data-main="/client_old/scripts/main" src="{{? it.buildConfig }}/old/scripts/{{=it.buildConfig['main-old.js']}}{{??}}/client_old/scripts/lib/require.js{{?}}"></script>
-#}}
-{{#def.include('./template/main_old')}}
+{{##def.page_title = 'Play' #}} {{##def.content:
+<div id="game">Game Loading...</div>
+<!--Global vars-->
+<script>
+    // TODO:
+    //  var OTT =  {{=it.ott}};
+</script>
+<!--RequireJs-->
+<script data-main="/client_old/scripts/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
+#}} {{#def.include('./template/main_old')}}

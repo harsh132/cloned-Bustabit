@@ -1,9 +1,6 @@
-define(['lib/key-mirror'], function(KeyMirror){
-
+define(["lib/key-mirror"], function (KeyMirror) {
     return {
-
         ActionTypes: KeyMirror({
-
             //Game Actions
             PLACE_BET: null,
             PLACE_BET_SUCCESS: null,
@@ -54,33 +51,31 @@ define(['lib/key-mirror'], function(KeyMirror){
             //PLACE_BET (GAME ACTIONS)
 
             //Chart
-            SELECT_CHART: null
+            SELECT_CHART: null,
         }),
 
         PayloadSources: KeyMirror({
-            VIEW_ACTION: null
+            VIEW_ACTION: null,
         }),
 
         Engine: {
             STOP_PREDICTING_LAPSE: 300,
-            HOST: (window.document.location.host === 'www.bustabit.com' || window.DEV_OTT) ? 'https://g2.moneypot.com:443' : window.document.location.host.replace(/:3841$/, ':3842'),
+            HOST: "http://localhost:3842",
+            // HOST: (window.document.location.host === 'www.bustabit.com' || window.DEV_OTT) ? 'https://g2.moneypot.com:443' : window.document.location.host.replace(/:3841$/, ':3842'),
             CHAT_HOST: window.document.location.host,
-            MAX_BET: 100000000 /** Max bet per game 1,000,000 Bits, this will be calculated dynamically in the future, based on the invested amount in the casino **/
+            MAX_BET: 100000000 /** Max bet per game 1,000,000 Bits, this will be calculated dynamically in the future, based on the invested amount in the casino **/,
         },
 
         BetButton: {
-            INITIAL_DISABLE_TIME: 500 //The time the button is disabled after cashing out and after the game crashes
+            INITIAL_DISABLE_TIME: 500, //The time the button is disabled after cashing out and after the game crashes
         },
 
         Chat: {
-            MAX_LENGTH: 500
+            MAX_LENGTH: 500,
         },
 
         Animations: {
-            NYAN_CAT_TRIGGER_MS: 115129 //115129ms ~ 1000x // 11552ms ~ 2x
-        }
-
-    }
-
+            NYAN_CAT_TRIGGER_MS: 115129, //115129ms ~ 1000x // 11552ms ~ 2x
+        },
+    };
 });
-
